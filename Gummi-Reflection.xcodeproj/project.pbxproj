@@ -24,7 +24,11 @@
 		CB22713E169F242D00E7369E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB22711E169F242D00E7369E /* UIKit.framework */; };
 		CB22713F169F242D00E7369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB227120169F242D00E7369E /* Foundation.framework */; };
 		CB227147169F242D00E7369E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB227145169F242D00E7369E /* InfoPlist.strings */; };
-		CF88E30BD5D8450592DB5255 /* libPods-Gummi-ReflectionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D46032D4A9649AF96D84A05 /* libPods-Gummi-ReflectionTests.a */; settings = {}; };
+		CB2271A6169F2FBA00E7369E /* Gummi-Reflection-57.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2271A5169F2FBA00E7369E /* Gummi-Reflection-57.png */; };
+		CB2271A9169F2FBD00E7369E /* Gummi-Reflection-114.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2271A8169F2FBD00E7369E /* Gummi-Reflection-114.png */; };
+		CB2271AB169F2FC300E7369E /* Gummi-Reflection-144.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2271AA169F2FC300E7369E /* Gummi-Reflection-144.png */; };
+		CB2271AD169F2FC600E7369E /* Gummi-Reflection-72.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2271AC169F2FC600E7369E /* Gummi-Reflection-72.png */; };
+		CF88E30BD5D8450592DB5255 /* libPods-Gummi-ReflectionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D46032D4A9649AF96D84A05 /* libPods-Gummi-ReflectionTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7D46032D4A9649AF96D84A05 /* libPods-Gummi-ReflectionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Gummi-ReflectionTests.a"; path = "libPods-Gummi-ReflectionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D46032D4A9649AF96D84A05 /* libPods-Gummi-ReflectionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gummi-ReflectionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4DF158536E572BDD2FBFE4 /* GRReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRReflection.m; sourceTree = "<group>"; };
 		8D4DF24ED1F64EC49330B2C3 /* GRReflectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRReflectionSpec.m; sourceTree = "<group>"; };
 		8D4DF6E6B257DEE43EA31D4D /* SomeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeObject.m; sourceTree = "<group>"; };
@@ -64,6 +68,10 @@
 		CB22713C169F242D00E7369E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB227144169F242D00E7369E /* Gummi-ReflectionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gummi-ReflectionTests-Info.plist"; sourceTree = "<group>"; };
 		CB227146169F242D00E7369E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB2271A5169F2FBA00E7369E /* Gummi-Reflection-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gummi-Reflection-57.png"; sourceTree = "<group>"; };
+		CB2271A8169F2FBD00E7369E /* Gummi-Reflection-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gummi-Reflection-114.png"; sourceTree = "<group>"; };
+		CB2271AA169F2FC300E7369E /* Gummi-Reflection-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gummi-Reflection-144.png"; sourceTree = "<group>"; };
+		CB2271AC169F2FC600E7369E /* Gummi-Reflection-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gummi-Reflection-72.png"; sourceTree = "<group>"; };
 		E17E31DFAB0F44F8B78C2814 /* Pods-Gummi-ReflectionTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gummi-ReflectionTests.xcconfig"; path = "Pods/Pods-Gummi-ReflectionTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -119,6 +127,10 @@
 				CB227134169F242D00E7369E /* Default-568h@2x.png */,
 				CB227130169F242D00E7369E /* Default.png */,
 				CB227132169F242D00E7369E /* Default@2x.png */,
+				CB2271A5169F2FBA00E7369E /* Gummi-Reflection-57.png */,
+				CB2271AC169F2FC600E7369E /* Gummi-Reflection-72.png */,
+				CB2271A8169F2FBD00E7369E /* Gummi-Reflection-114.png */,
+				CB2271AA169F2FC300E7369E /* Gummi-Reflection-144.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -257,8 +269,6 @@
 			mainGroup = CB22710F169F242D00E7369E;
 			productRefGroup = CB22711B169F242D00E7369E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				CB227119169F242D00E7369E /* Gummi-Reflection */,
@@ -276,6 +286,10 @@
 				CB227131169F242D00E7369E /* Default.png in Resources */,
 				CB227133169F242D00E7369E /* Default@2x.png in Resources */,
 				CB227135169F242D00E7369E /* Default-568h@2x.png in Resources */,
+				CB2271A6169F2FBA00E7369E /* Gummi-Reflection-57.png in Resources */,
+				CB2271A9169F2FBD00E7369E /* Gummi-Reflection-114.png in Resources */,
+				CB2271AB169F2FC300E7369E /* Gummi-Reflection-144.png in Resources */,
+				CB2271AD169F2FC600E7369E /* Gummi-Reflection-72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +317,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-Gummi-ReflectionTests-resources.sh\"\n";
-			showEnvVarsInLog = 1;
 		};
 		CB227139169F242D00E7369E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -500,6 +513,7 @@
 				CB22714F169F242D00E7369E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB227150169F242D00E7369E /* Build configuration list for PBXNativeTarget "Gummi-ReflectionTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +522,7 @@
 				CB227152169F242D00E7369E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
