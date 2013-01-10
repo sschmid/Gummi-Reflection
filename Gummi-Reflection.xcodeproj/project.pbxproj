@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D4DF27B72C1291666BCE99D /* SomeOtherObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFA1EF573B9D88A869386 /* SomeOtherObject.m */; };
+		8D4DF301BC425CA51BDB613C /* GRReflectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF24ED1F64EC49330B2C3 /* GRReflectionSpec.m */; };
+		8D4DF9DBBE060F2088FE463D /* GRReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF158536E572BDD2FBFE4 /* GRReflection.m */; };
+		8D4DFFD1549BACD37150B99D /* SomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF6E6B257DEE43EA31D4D /* SomeObject.m */; };
 		CB22711F169F242D00E7369E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB22711E169F242D00E7369E /* UIKit.framework */; };
 		CB227121169F242D00E7369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB227120169F242D00E7369E /* Foundation.framework */; };
 		CB227123169F242D00E7369E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB227122169F242D00E7369E /* CoreGraphics.framework */; };
@@ -20,7 +24,7 @@
 		CB22713E169F242D00E7369E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB22711E169F242D00E7369E /* UIKit.framework */; };
 		CB22713F169F242D00E7369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB227120169F242D00E7369E /* Foundation.framework */; };
 		CB227147169F242D00E7369E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB227145169F242D00E7369E /* InfoPlist.strings */; };
-		CB22714A169F242D00E7369E /* Gummi_ReflectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB227149169F242D00E7369E /* Gummi_ReflectionTests.m */; };
+		CF88E30BD5D8450592DB5255 /* libPods-Gummi-ReflectionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D46032D4A9649AF96D84A05 /* libPods-Gummi-ReflectionTests.a */; settings = {}; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D46032D4A9649AF96D84A05 /* libPods-Gummi-ReflectionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Gummi-ReflectionTests.a"; path = "libPods-Gummi-ReflectionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D4DF158536E572BDD2FBFE4 /* GRReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRReflection.m; sourceTree = "<group>"; };
+		8D4DF24ED1F64EC49330B2C3 /* GRReflectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRReflectionSpec.m; sourceTree = "<group>"; };
+		8D4DF6E6B257DEE43EA31D4D /* SomeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeObject.m; sourceTree = "<group>"; };
+		8D4DF7DB3C2226EC0F59234A /* SomeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeProtocol.h; sourceTree = "<group>"; };
+		8D4DF97A5CCF4DCD16DD753A /* SomeOtherObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeOtherObject.h; sourceTree = "<group>"; };
+		8D4DFA1EF573B9D88A869386 /* SomeOtherObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeOtherObject.m; sourceTree = "<group>"; };
+		8D4DFE92B20087B1EF67B175 /* SomeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeObject.h; sourceTree = "<group>"; };
+		8D4DFF4157D8155EBB5DA1F4 /* GRReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRReflection.h; sourceTree = "<group>"; };
 		CB22711A169F242D00E7369E /* Gummi-Reflection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gummi-Reflection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB22711E169F242D00E7369E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB227120169F242D00E7369E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,8 +64,7 @@
 		CB22713C169F242D00E7369E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB227144169F242D00E7369E /* Gummi-ReflectionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gummi-ReflectionTests-Info.plist"; sourceTree = "<group>"; };
 		CB227146169F242D00E7369E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CB227148169F242D00E7369E /* Gummi_ReflectionTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gummi_ReflectionTests.h; sourceTree = "<group>"; };
-		CB227149169F242D00E7369E /* Gummi_ReflectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gummi_ReflectionTests.m; sourceTree = "<group>"; };
+		E17E31DFAB0F44F8B78C2814 /* Pods-Gummi-ReflectionTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gummi-ReflectionTests.xcconfig"; path = "Pods/Pods-Gummi-ReflectionTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +85,44 @@
 				CB22713D169F242D00E7369E /* SenTestingKit.framework in Frameworks */,
 				CB22713E169F242D00E7369E /* UIKit.framework in Frameworks */,
 				CB22713F169F242D00E7369E /* Foundation.framework in Frameworks */,
+				CF88E30BD5D8450592DB5255 /* libPods-Gummi-ReflectionTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D4DF16D06A6EC16E4522CE1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8D4DFF4157D8155EBB5DA1F4 /* GRReflection.h */,
+				8D4DF158536E572BDD2FBFE4 /* GRReflection.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8D4DF41A51E1C94B6F2A98BB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8D4DF6E6B257DEE43EA31D4D /* SomeObject.m */,
+				8D4DFE92B20087B1EF67B175 /* SomeObject.h */,
+				8D4DF7DB3C2226EC0F59234A /* SomeProtocol.h */,
+				8D4DFA1EF573B9D88A869386 /* SomeOtherObject.m */,
+				8D4DF97A5CCF4DCD16DD753A /* SomeOtherObject.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8D4DFB57A496F8FD53B3D911 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB227134169F242D00E7369E /* Default-568h@2x.png */,
+				CB227130169F242D00E7369E /* Default.png */,
+				CB227132169F242D00E7369E /* Default@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CB22710F169F242D00E7369E = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +130,8 @@
 				CB227142169F242D00E7369E /* Gummi-ReflectionTests */,
 				CB22711D169F242D00E7369E /* Frameworks */,
 				CB22711B169F242D00E7369E /* Products */,
+				E17E31DFAB0F44F8B78C2814 /* Pods-Gummi-ReflectionTests.xcconfig */,
+				8D4DFB57A496F8FD53B3D911 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +151,7 @@
 				CB227120169F242D00E7369E /* Foundation.framework */,
 				CB227122169F242D00E7369E /* CoreGraphics.framework */,
 				CB22713C169F242D00E7369E /* SenTestingKit.framework */,
+				7D46032D4A9649AF96D84A05 /* libPods-Gummi-ReflectionTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +162,7 @@
 				CB22712D169F242D00E7369E /* GRAppDelegate.h */,
 				CB22712E169F242D00E7369E /* GRAppDelegate.m */,
 				CB227125169F242D00E7369E /* Supporting Files */,
+				8D4DF16D06A6EC16E4522CE1 /* Classes */,
 			);
 			path = "Gummi-Reflection";
 			sourceTree = "<group>";
@@ -126,9 +174,6 @@
 				CB227127169F242D00E7369E /* InfoPlist.strings */,
 				CB22712A169F242D00E7369E /* main.m */,
 				CB22712C169F242D00E7369E /* Gummi-Reflection-Prefix.pch */,
-				CB227130169F242D00E7369E /* Default.png */,
-				CB227132169F242D00E7369E /* Default@2x.png */,
-				CB227134169F242D00E7369E /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -136,9 +181,9 @@
 		CB227142169F242D00E7369E /* Gummi-ReflectionTests */ = {
 			isa = PBXGroup;
 			children = (
-				CB227148169F242D00E7369E /* Gummi_ReflectionTests.h */,
-				CB227149169F242D00E7369E /* Gummi_ReflectionTests.m */,
 				CB227143169F242D00E7369E /* Supporting Files */,
+				8D4DF24ED1F64EC49330B2C3 /* GRReflectionSpec.m */,
+				8D4DF41A51E1C94B6F2A98BB /* Classes */,
 			);
 			path = "Gummi-ReflectionTests";
 			sourceTree = "<group>";
@@ -180,6 +225,7 @@
 				CB227137169F242D00E7369E /* Frameworks */,
 				CB227138169F242D00E7369E /* Resources */,
 				CB227139169F242D00E7369E /* ShellScript */,
+				759ACBE074BC4B9C93670E77 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -211,6 +257,8 @@
 			mainGroup = CB22710F169F242D00E7369E;
 			productRefGroup = CB22711B169F242D00E7369E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				CB227119169F242D00E7369E /* Gummi-Reflection */,
@@ -242,6 +290,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		759ACBE074BC4B9C93670E77 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Gummi-ReflectionTests-resources.sh\"\n";
+			showEnvVarsInLog = 1;
+		};
 		CB227139169F242D00E7369E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,6 +327,7 @@
 			files = (
 				CB22712B169F242D00E7369E /* main.m in Sources */,
 				CB22712F169F242D00E7369E /* GRAppDelegate.m in Sources */,
+				8D4DF9DBBE060F2088FE463D /* GRReflection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +335,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB22714A169F242D00E7369E /* Gummi_ReflectionTests.m in Sources */,
+				8D4DF301BC425CA51BDB613C /* GRReflectionSpec.m in Sources */,
+				8D4DFFD1549BACD37150B99D /* SomeObject.m in Sources */,
+				8D4DF27B72C1291666BCE99D /* SomeOtherObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +447,7 @@
 		};
 		CB227151169F242D00E7369E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E17E31DFAB0F44F8B78C2814 /* Pods-Gummi-ReflectionTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gummi-Reflection.app/Gummi-Reflection";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -398,6 +465,7 @@
 		};
 		CB227152169F242D00E7369E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E17E31DFAB0F44F8B78C2814 /* Pods-Gummi-ReflectionTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gummi-Reflection.app/Gummi-Reflection";
 				FRAMEWORK_SEARCH_PATHS = (
