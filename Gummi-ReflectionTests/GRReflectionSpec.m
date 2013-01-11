@@ -13,6 +13,30 @@
 
 SPEC_BEGIN(GRReflectionSpec)
 
+        void (^isClass)(id) = ^(id object) {
+            [[theValue([GRReflection isClass:object]) should] beYes];
+            [[theValue([GRReflection isProtocol:object]) should] beNo];
+            [[theValue([GRReflection isInstance:object]) should] beNo];
+        };
+
+        void (^isProtocol)(id) = ^(id object) {
+            [[theValue([GRReflection isClass:object]) should] beNo];
+            [[theValue([GRReflection isProtocol:object]) should] beYes];
+            [[theValue([GRReflection isInstance:object]) should] beNo];
+        };
+
+        void (^isInstance)(id) = ^(id object) {
+            [[theValue([GRReflection isClass:object]) should] beNo];
+            [[theValue([GRReflection isProtocol:object]) should] beNo];
+            [[theValue([GRReflection isInstance:object]) should] beYes];
+        };
+
+        void (^isNothing)(id) = ^(id object) {
+            [[theValue([GRReflection isClass:object]) should] beNo];
+            [[theValue([GRReflection isProtocol:object]) should] beNo];
+            [[theValue([GRReflection isInstance:object]) should] beNo];
+        };
+
         describe(@"Reflection", ^{
 
             it(@"gets the type of a property class", ^{
@@ -32,35 +56,22 @@ SPEC_BEGIN(GRReflectionSpec)
             });
 
             it(@"is a class", ^{
-                id o = [SomeObject class];
-
-                [[theValue([GRReflection isClass:o]) should] beYes];
-                [[theValue([GRReflection isProtocol:o]) should] beNo];
-                [[theValue([GRReflection isInstance:o]) should] beNo];
+                id object = [SomeObject class];
+                isClass(object);
             });
 
             it(@"is a protocol", ^{
-                id o = @protocol(SomeProtocol);
-
-                [[theValue([GRReflection isClass:o]) should] beNo];
-                [[theValue([GRReflection isProtocol:o]) should] beYes];
-                [[theValue([GRReflection isInstance:o]) should] beNo];
+                id object = @protocol(SomeProtocol);
+                isProtocol(object);
             });
 
             it(@"is an instance", ^{
-                id o = [[SomeObject alloc] init];
-
-                [[theValue([GRReflection isClass:o]) should] beNo];
-                [[theValue([GRReflection isProtocol:o]) should] beNo];
-                [[theValue([GRReflection isInstance:o]) should] beYes];
+                id object = [[SomeObject alloc] init];
+                isInstance(object);
             });
 
             it(@"nil is handled correctly", ^{
-                id o = nil;
-
-                [[theValue([GRReflection isClass:o]) should] beNo];
-                [[theValue([GRReflection isProtocol:o]) should] beNo];
-                [[theValue([GRReflection isInstance:o]) should] beNo];
+                isNothing(nil);
             });
 
         });
