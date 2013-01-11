@@ -4,9 +4,7 @@
 // contact@sschmid.com
 //
 
-
 #import "GRAppDelegate.h"
-
 
 @implementation GRAppDelegate
 

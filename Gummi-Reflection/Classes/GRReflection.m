@@ -4,7 +4,6 @@
 // contact@sschmid.com
 //
 
-
 #import <objc/runtime.h>
 #import "GRReflection.h"
 

@@ -4,7 +4,6 @@
 // contact@sschmid.com
 //
 
-
 #import "Kiwi.h"
 #import "GRReflection.h"
 #import "SomeObject.h"

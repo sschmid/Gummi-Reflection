@@ -4,9 +4,7 @@
 // contact@sschmid.com
 //
 
-
 #import <Foundation/Foundation.h>
-
 
 // Objective-C Runtime Programming Guide - Property Introspection
 // see: https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html

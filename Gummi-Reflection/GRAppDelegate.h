@@ -4,7 +4,6 @@
 // contact@sschmid.com
 //
 
-
 #import <UIKit/UIKit.h>
 
 @interface GRAppDelegate : UIResponder <UIApplicationDelegate>
