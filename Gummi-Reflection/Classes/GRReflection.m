@@ -17,7 +17,7 @@ static NSString *const GIReflectorException = @"GIReflectorException";
     if (!property)
         @throw [NSException exceptionWithName:GIReflectorException reason:[NSString stringWithFormat:@"Property declaration for propertyName: '%@' does not exist", propertyName] userInfo:nil];
 
-    NSString *attributes = [NSString stringWithCString:property_getAttributes(property) encoding:NSUTF8StringEncoding];
+    NSString *attributes = @(property_getAttributes(property));
 
     NSRange startRange = [attributes rangeOfString:@"T@\""];
     if (startRange.location == NSNotFound)
