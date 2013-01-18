@@ -14,19 +14,25 @@ static NSString *const GIReflectorException = @"GIReflectorException";
 + (id)getTypeForProperty:(NSString *)propertyName ofClass:(Class)aClass {
     objc_property_t property = class_getProperty(aClass, [propertyName UTF8String]);
     if (!property)
-        @throw [NSException exceptionWithName:GIReflectorException reason:[NSString stringWithFormat:@"Property declaration for propertyName: '%@' does not exist", propertyName] userInfo:nil];
+        @throw [NSException exceptionWithName:GIReflectorException
+                                       reason:[NSString stringWithFormat:@"Property declaration for propertyName: '%@' does not exist", propertyName]
+                                     userInfo:nil];
 
     NSString *attributes = @(property_getAttributes(property));
 
     NSRange startRange = [attributes rangeOfString:@"T@\""];
     if (startRange.location == NSNotFound)
-        @throw [NSException exceptionWithName:GIReflectorException reason:[NSString stringWithFormat:@"Unable to determine class type for property declaration: '%@'", propertyName] userInfo:nil];
+        @throw [NSException exceptionWithName:GIReflectorException
+                                       reason:[NSString stringWithFormat:@"Unable to determine class type for property declaration: '%@'", propertyName]
+                                     userInfo:nil];
 
     NSString *startOfClassName = [attributes substringFromIndex:startRange.length];
 
     NSRange endRange = [startOfClassName rangeOfString:@"\""];
     if (endRange.location == NSNotFound)
-        @throw [NSException exceptionWithName:GIReflectorException reason:[NSString stringWithFormat:@"Unable to determine class type for property declaration: '%@'", propertyName] userInfo:nil];
+        @throw [NSException exceptionWithName:GIReflectorException
+                                       reason:[NSString stringWithFormat:@"Unable to determine class type for property declaration: '%@'", propertyName]
+                                     userInfo:nil];
 
     if ([[startOfClassName substringToIndex:1] isEqualToString:@"<"])
         return NSProtocolFromString([[startOfClassName substringFromIndex:1] substringToIndex:endRange.location - 2]);

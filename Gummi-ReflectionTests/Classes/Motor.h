@@ -4,7 +4,7 @@
 // contact@sschmid.com
 //
 
-#import "SomeOtherObject.h"
+#import <Foundation/Foundation.h>
 
-@implementation SomeOtherObject
+@protocol Motor <NSObject>
 @end

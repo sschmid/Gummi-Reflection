@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D4DF27B72C1291666BCE99D /* SomeOtherObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFA1EF573B9D88A869386 /* SomeOtherObject.m */; };
+		8D4DF27B72C1291666BCE99D /* Wheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFA1EF573B9D88A869386 /* Wheel.m */; };
 		8D4DF301BC425CA51BDB613C /* GRReflectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF24ED1F64EC49330B2C3 /* GRReflectionSpec.m */; };
 		8D4DF9DBBE060F2088FE463D /* GRReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF158536E572BDD2FBFE4 /* GRReflection.m */; };
-		8D4DFFD1549BACD37150B99D /* SomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF6E6B257DEE43EA31D4D /* SomeObject.m */; };
+		8D4DFFD1549BACD37150B99D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF6E6B257DEE43EA31D4D /* Car.m */; };
 		CB22711F169F242D00E7369E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB22711E169F242D00E7369E /* UIKit.framework */; };
 		CB227121169F242D00E7369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB227120169F242D00E7369E /* Foundation.framework */; };
 		CB227123169F242D00E7369E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB227122169F242D00E7369E /* CoreGraphics.framework */; };
@@ -45,11 +45,11 @@
 		7D46032D4A9649AF96D84A05 /* libPods-Gummi-ReflectionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gummi-ReflectionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4DF158536E572BDD2FBFE4 /* GRReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRReflection.m; sourceTree = "<group>"; };
 		8D4DF24ED1F64EC49330B2C3 /* GRReflectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRReflectionSpec.m; sourceTree = "<group>"; };
-		8D4DF6E6B257DEE43EA31D4D /* SomeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeObject.m; sourceTree = "<group>"; };
-		8D4DF7DB3C2226EC0F59234A /* SomeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeProtocol.h; sourceTree = "<group>"; };
-		8D4DF97A5CCF4DCD16DD753A /* SomeOtherObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeOtherObject.h; sourceTree = "<group>"; };
-		8D4DFA1EF573B9D88A869386 /* SomeOtherObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeOtherObject.m; sourceTree = "<group>"; };
-		8D4DFE92B20087B1EF67B175 /* SomeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeObject.h; sourceTree = "<group>"; };
+		8D4DF6E6B257DEE43EA31D4D /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		8D4DF7DB3C2226EC0F59234A /* Motor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motor.h; sourceTree = "<group>"; };
+		8D4DF97A5CCF4DCD16DD753A /* Wheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wheel.h; sourceTree = "<group>"; };
+		8D4DFA1EF573B9D88A869386 /* Wheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wheel.m; sourceTree = "<group>"; };
+		8D4DFE92B20087B1EF67B175 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		8D4DFF4157D8155EBB5DA1F4 /* GRReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRReflection.h; sourceTree = "<group>"; };
 		CB22711A169F242D00E7369E /* Gummi-Reflection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gummi-Reflection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB22711E169F242D00E7369E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -112,11 +112,11 @@
 		8D4DF41A51E1C94B6F2A98BB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8D4DF6E6B257DEE43EA31D4D /* SomeObject.m */,
-				8D4DFE92B20087B1EF67B175 /* SomeObject.h */,
-				8D4DF7DB3C2226EC0F59234A /* SomeProtocol.h */,
-				8D4DFA1EF573B9D88A869386 /* SomeOtherObject.m */,
-				8D4DF97A5CCF4DCD16DD753A /* SomeOtherObject.h */,
+				8D4DF6E6B257DEE43EA31D4D /* Car.m */,
+				8D4DFE92B20087B1EF67B175 /* Car.h */,
+				8D4DF7DB3C2226EC0F59234A /* Motor.h */,
+				8D4DFA1EF573B9D88A869386 /* Wheel.m */,
+				8D4DF97A5CCF4DCD16DD753A /* Wheel.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -349,8 +349,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D4DF301BC425CA51BDB613C /* GRReflectionSpec.m in Sources */,
-				8D4DFFD1549BACD37150B99D /* SomeObject.m in Sources */,
-				8D4DF27B72C1291666BCE99D /* SomeOtherObject.m in Sources */,
+				8D4DFFD1549BACD37150B99D /* Car.m in Sources */,
+				8D4DF27B72C1291666BCE99D /* Wheel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

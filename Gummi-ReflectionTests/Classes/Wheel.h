@@ -4,7 +4,7 @@
 // contact@sschmid.com
 //
 
-#import "SomeObject.h"
+#import <Foundation/Foundation.h>
 
-@implementation SomeObject
+@interface Wheel : NSObject
 @end

@@ -6,9 +6,9 @@
 
 #import "Kiwi.h"
 #import "GRReflection.h"
-#import "SomeObject.h"
-#import "SomeOtherObject.h"
-#import "SomeProtocol.h"
+#import "Car.h"
+#import "Wheel.h"
+#import "Motor.h"
 
 SPEC_BEGIN(GRReflectionSpec)
 
@@ -39,33 +39,33 @@ SPEC_BEGIN(GRReflectionSpec)
         describe(@"Reflection", ^{
 
             it(@"gets the type of a property class", ^{
-                id class = [GRReflection getTypeForProperty:@"otherObject" ofClass:[SomeObject class]];
-                [[class should] equal:[SomeOtherObject class]];
+                id object = [GRReflection getTypeForProperty:@"wheel" ofClass:[Car class]];
+                [[object should] equal:[Wheel class]];
             });
 
             it(@"gets the type of a property protocol", ^{
-                id protocol = [GRReflection getTypeForProperty:@"someProtocol" ofClass:[SomeObject class]];
-                [[protocol should] equal:@protocol(SomeProtocol)];
+                id object = [GRReflection getTypeForProperty:@"motor" ofClass:[Car class]];
+                [[object should] equal:@protocol(Motor)];
             });
 
             it(@"raises exeption for unknown property names", ^{
                 [[theBlock(^{
-                    [GRReflection getTypeForProperty:@"iDoNotExist" ofClass:[SomeObject class]];
+                    [GRReflection getTypeForProperty:@"iDoNotExist" ofClass:[Car class]];
                 }) should] raiseWithName:@"GIReflectorException"];
             });
 
             it(@"is a class", ^{
-                id object = [SomeObject class];
+                id object = [Car class];
                 isClass(object);
             });
 
             it(@"is a protocol", ^{
-                id object = @protocol(SomeProtocol);
+                id object = @protocol(Motor);
                 isProtocol(object);
             });
 
             it(@"is an instance", ^{
-                id object = [[SomeObject alloc] init];
+                id object = [[Car alloc] init];
                 isInstance(object);
             });
 

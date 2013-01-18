@@ -2,7 +2,7 @@
 ![Gummi Reflection Logo](http://sschmid.com/Libs/Gummi-Reflection/Gummi-Reflection-128.png)
 
 ## Description
-Gummi Reflection is a set of methods to easily inspect objects in Objective-C.
+Gummi Reflection is a set of class methods to easily inspect objects in Objective-C.
 
 ## How to use Gummi Reflection
 
@@ -19,7 +19,7 @@ BOOL isInstance = [GRReflection isInstance:object];
 
 ```objective-c
 // returns class 'Wheel'
-id class = [GRReflection getTypeForProperty:@"leftFrontWheel"
+id class = [GRReflection getTypeForProperty:@"wheel"
                                     ofClass:[Car class]];
 
 // returns protocol <Motor>
