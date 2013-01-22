@@ -12,6 +12,7 @@ Gummi Reflection is a set of class methods to easily inspect objects in Objectiv
 id object = [SomeObject class];
 BOOL isClass = [GRReflection isClass:object];
 BOOL isProtocol = [GRReflection isProtocol:object];
+BOOL isBlock = [GRReflection isBlock:object];
 BOOL isInstance = [GRReflection isInstance:object];
 ```
 

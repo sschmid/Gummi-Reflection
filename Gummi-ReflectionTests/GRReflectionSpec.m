@@ -4,6 +4,7 @@
 // contact@sschmid.com
 //
 
+#import <objc/runtime.h>
 #import "Kiwi.h"
 #import "GRReflection.h"
 #import "Car.h"
@@ -16,18 +17,28 @@ SPEC_BEGIN(GRReflectionSpec)
             [[theValue([GRReflection isClass:object]) should] beYes];
             [[theValue([GRReflection isProtocol:object]) should] beNo];
             [[theValue([GRReflection isInstance:object]) should] beNo];
+            [[theValue([GRReflection isBlock:object]) should] beNo];
         };
 
         void (^isProtocol)(id) = ^(id object) {
             [[theValue([GRReflection isClass:object]) should] beNo];
             [[theValue([GRReflection isProtocol:object]) should] beYes];
             [[theValue([GRReflection isInstance:object]) should] beNo];
+            [[theValue([GRReflection isBlock:object]) should] beNo];
         };
 
         void (^isInstance)(id) = ^(id object) {
             [[theValue([GRReflection isClass:object]) should] beNo];
             [[theValue([GRReflection isProtocol:object]) should] beNo];
             [[theValue([GRReflection isInstance:object]) should] beYes];
+            [[theValue([GRReflection isBlock:object]) should] beNo];
+        };
+
+        void (^isBlock)(id) = ^(id object) {
+            [[theValue([GRReflection isClass:object]) should] beNo];
+            [[theValue([GRReflection isProtocol:object]) should] beNo];
+            [[theValue([GRReflection isInstance:object]) should] beNo];
+            [[theValue([GRReflection isBlock:object]) should] beYes];
         };
 
         void (^isNothing)(id) = ^(id object) {
@@ -62,6 +73,21 @@ SPEC_BEGIN(GRReflectionSpec)
             it(@"is a protocol", ^{
                 id object = @protocol(Motor);
                 isProtocol(object);
+            });
+
+            it(@"is a block", ^{
+                void (^object)() = ^{
+                };
+
+                isBlock(object);
+            });
+
+            it(@"is a block", ^{
+                id (^object)(id someThing) = ^id(id someThing) {
+                    return [[NSObject alloc] init];
+                };
+
+                isBlock(object);
             });
 
             it(@"is an instance", ^{

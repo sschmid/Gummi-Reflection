@@ -54,11 +54,20 @@ static NSString *const GIReflectorException = @"GIReflectorException";
     return class_isMetaClass(object_getClass(object));
 }
 
++ (BOOL)isBlock:(id)object {
+    if (!object)
+        return NO;
+
+    return [object_getClass(object) isEqual:NSClassFromString(@"__NSGlobalBlock__")];;
+}
+
 + (BOOL)isInstance:(id)object {
     if (!object)
         return NO;
 
-    return ![self isClass:object] && ![self isProtocol:object];
+    return ![self isClass:object] &&
+            ![self isProtocol:object] &&
+            ![self isBlock:object];
 }
 
 @end
