@@ -15,8 +15,10 @@
 @interface GRReflection : NSObject
 
 + (id)getTypeForProperty:(NSString *)propertyName ofClass:(Class)aClass;
+
 + (BOOL)isProtocol:(id)object;
 + (BOOL)isClass:(id)object;
 + (BOOL)isBlock:(id)object;
 + (BOOL)isInstance:(id)object;
+
 @end

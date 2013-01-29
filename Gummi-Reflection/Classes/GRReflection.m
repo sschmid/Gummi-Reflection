@@ -9,7 +9,15 @@
 
 static NSString *const GIReflectorException = @"GIReflectorException";
 
+static Class kProtocolClass;
+static Class kBlockClass;
+
 @implementation GRReflection
+
++ (void)initialize {
+    kProtocolClass = object_getClass(@protocol(NSObject));
+    kBlockClass = object_getClass(^{});
+}
 
 + (id)getTypeForProperty:(NSString *)propertyName ofClass:(Class)aClass {
     objc_property_t property = class_getProperty(aClass, [propertyName UTF8String]);
@@ -44,7 +52,7 @@ static NSString *const GIReflectorException = @"GIReflectorException";
     if (!object)
         return NO;
 
-    return [object_getClass(object) isEqual:object_getClass(@protocol(NSObject))];
+    return [object_getClass(object) isEqual:kProtocolClass];
 }
 
 + (BOOL)isClass:(id)object {
@@ -58,7 +66,7 @@ static NSString *const GIReflectorException = @"GIReflectorException";
     if (!object)
         return NO;
 
-    return [object_getClass(object) isEqual:NSClassFromString(@"__NSGlobalBlock__")];;
+    return [object_getClass(object) isEqual:kBlockClass];
 }
 
 + (BOOL)isInstance:(id)object {
