@@ -19,6 +19,16 @@ static Class kBlockClass;
     kBlockClass = object_getClass(^{});
 }
 
++ (NSArray *)getAllPropertyNamesOfClass:(Class)aClass {
+    NSMutableArray *propertyNames = [[NSMutableArray alloc] init];
+    unsigned int outCount, i;
+    objc_property_t *properties = class_copyPropertyList(aClass, &outCount);
+    for (i = 0; i < outCount; i++)
+        [propertyNames addObject:@(property_getName(properties[i]))];
+
+    return propertyNames;
+}
+
 + (id)getTypeForProperty:(NSString *)propertyName ofClass:(Class)aClass {
     objc_property_t property = class_getProperty(aClass, [propertyName UTF8String]);
     if (!property)

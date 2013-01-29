@@ -14,6 +14,7 @@
 
 @interface GRReflection : NSObject
 
++ (NSArray *)getAllPropertyNamesOfClass:(Class)aClass;
 + (id)getTypeForProperty:(NSString *)propertyName ofClass:(Class)aClass;
 
 + (BOOL)isProtocol:(id)object;

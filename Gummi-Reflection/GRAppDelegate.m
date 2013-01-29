@@ -5,6 +5,7 @@
 //
 
 #import "GRAppDelegate.h"
+#import "SimpleExample.h"
 
 @implementation GRAppDelegate
 
@@ -14,6 +15,8 @@
     [self.window makeKeyAndVisible];
 
     [self addIcon];
+
+    SimpleExample *simpleExample = [[SimpleExample alloc] init];
 
     return YES;
 }

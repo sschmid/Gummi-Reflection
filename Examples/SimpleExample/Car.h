@@ -7,9 +7,9 @@
 #import <Foundation/Foundation.h>
 
 @class Wheel;
-@protocol Motor;
+@protocol Engine;
 
 @interface Car : NSObject
 @property (nonatomic, strong) Wheel *wheel;
-@property (nonatomic, strong) id <Motor> motor;
+@property (nonatomic, strong) id <Engine> engine;
 @end
