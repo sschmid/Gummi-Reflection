@@ -37,37 +37,49 @@
 
 <h2>Description</h2>
 
-<p>Gummi Reflection is a set of class methods to easily inspect objects in Objective-C.</p>
+<p>Gummi Reflection is a set of class methods to easily inspect objects in Objective-C. It's a small subproject mainly used by <a href="http://sschmid.github.com/Gummi-Injection">Gummi Injection</a> and <a href="http://sschmid.github.com/Gummi-Commander">Gummi Commander</a>.</p>
 
 <h2>How to use Gummi Reflection</h2>
 
 <h4>Inspect an object</h4>
 
-<div class="highlight"><pre><span class="kt">id</span> <span class="n">object</span> <span class="o">=</span> <span class="p">[</span><span class="n">SomeObject</span> <span class="n">class</span><span class="p">];</span>
-<span class="kt">BOOL</span> <span class="n">isClass</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isClass:</span><span class="n">object</span><span class="p">];</span>
-<span class="kt">BOOL</span> <span class="n">isProtocol</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isProtocol:</span><span class="n">object</span><span class="p">];</span>
-<span class="kt">BOOL</span> <span class="n">isBlock</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isBlock:</span><span class="n">object</span><span class="p">];</span>
-<span class="kt">BOOL</span> <span class="n">isInstance</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isInstance:</span><span class="n">object</span><span class="p">];</span>
+<div class="highlight"><pre><span class="n">Car</span> <span class="o">*</span><span class="n">car</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Car</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+
+<span class="kt">BOOL</span> <span class="n">isClass</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isClass:</span><span class="n">car</span><span class="p">];</span>
+<span class="kt">BOOL</span> <span class="n">isProtocol</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isProtocol:</span><span class="n">car</span><span class="p">];</span>
+<span class="kt">BOOL</span> <span class="n">isBlock</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isBlock:</span><span class="n">car</span><span class="p">];</span>
+<span class="kt">BOOL</span> <span class="n">isInstance</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isInstance:</span><span class="n">car</span><span class="p">];</span>
+
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"isClass = %d"</span><span class="p">,</span> <span class="n">isClass</span><span class="p">);</span>        <span class="c1">// NO</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"isProtocol = %d"</span><span class="p">,</span> <span class="n">isProtocol</span><span class="p">);</span>  <span class="c1">// NO</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"isBlock = %d"</span><span class="p">,</span> <span class="n">isBlock</span><span class="p">);</span>        <span class="c1">// NO</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"isInstance = %d"</span><span class="p">,</span> <span class="n">isInstance</span><span class="p">);</span>  <span class="c1">// YES</span>
 </pre></div>
 
-<h4>Get the type of a property of a given class</h4>
+<h4>Get all property names of a class</h4>
+
+<div class="highlight"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">propertyNames</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">getAllPropertyNamesOfClass:</span><span class="p">[</span><span class="n">Car</span> <span class="n">class</span><span class="p">]];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"propertyNames = %@"</span><span class="p">,</span> <span class="n">propertyNames</span><span class="p">);</span>  <span class="c1">// (@"wheel", @"engine")</span>
+</pre></div>
+
+<h4>Get the property type of a class</h4>
 
 <div class="highlight"><pre><span class="c1">// returns class 'Wheel'</span>
-<span class="kt">id</span> <span class="n">class</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">getTypeForProperty:</span><span class="s">@"wheel"</span>
-                                    <span class="nl">ofClass:</span><span class="p">[</span><span class="n">Car</span> <span class="n">class</span><span class="p">]];</span>
+<span class="kt">id</span> <span class="n">wheelType</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">getTypeForProperty:</span><span class="s">@"wheel"</span>
+                                        <span class="nl">ofClass:</span><span class="p">[</span><span class="n">Car</span> <span class="n">class</span><span class="p">]];</span>
 
-<span class="c1">// returns protocol &lt;Motor&gt;</span>
-<span class="kt">id</span> <span class="n">protocol</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">getTypeForProperty:</span><span class="s">@"motor"</span>
-                                       <span class="nl">ofClass:</span><span class="p">[</span><span class="n">Car</span> <span class="n">class</span><span class="p">]];</span>
+<span class="c1">// returns protocol &lt;Engine&gt;</span>
+<span class="kt">id</span> <span class="n">engineType</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">getTypeForProperty:</span><span class="s">@"engine"</span>
+                                         <span class="nl">ofClass:</span><span class="p">[</span><span class="n">Car</span> <span class="n">class</span><span class="p">]];</span>
 </pre></div>
 
 <h2>Projects that use Gummi Reflection</h2>
 
 <ul>
 <li>
-<a href="http://sschmid.github.com/Gummi-Injection">Gummi Injection</a> A lightweight dependency injection framework for Objective-C</li>
+<a href="http://sschmid.github.com/Gummi-Injection">Gummi Injection</a> - A lightweight dependency injection framework for Objective-C</li>
 <li>
-<a href="http://sschmid.github.com/Gummi-Commander">Gummi Commander</a> Event Command Mapping System for Objective-C</li>
+<a href="http://sschmid.github.com/Gummi-Commander">Gummi Commander</a> - Event Command Mapping System for Objective-C</li>
 </ul>
         </section>
 
