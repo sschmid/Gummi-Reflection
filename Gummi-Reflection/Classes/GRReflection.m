@@ -33,7 +33,8 @@ static Class kBlockClass;
     objc_property_t property = class_getProperty(aClass, [propertyName UTF8String]);
     if (!property)
         @throw [NSException exceptionWithName:GIReflectorException
-                                       reason:[NSString stringWithFormat:@"Property declaration for propertyName: '%@' does not exist", propertyName]
+                                       reason:[NSString stringWithFormat:@"'%@' does not have a property for '%@'",
+                                                                         NSStringFromClass(aClass), propertyName]
                                      userInfo:nil];
 
     NSString *attributes = @(property_getAttributes(property));
@@ -41,7 +42,8 @@ static Class kBlockClass;
     NSRange startRange = [attributes rangeOfString:@"T@\""];
     if (startRange.location == NSNotFound)
         @throw [NSException exceptionWithName:GIReflectorException
-                                       reason:[NSString stringWithFormat:@"Unable to determine class type for property declaration: '%@'", propertyName]
+                                       reason:[NSString stringWithFormat:@"Unable to determine class type for property '%@' of class '%@'",
+                                                                         propertyName, aClass]
                                      userInfo:nil];
 
     NSString *startOfClassName = [attributes substringFromIndex:startRange.length];
@@ -49,7 +51,8 @@ static Class kBlockClass;
     NSRange endRange = [startOfClassName rangeOfString:@"\""];
     if (endRange.location == NSNotFound)
         @throw [NSException exceptionWithName:GIReflectorException
-                                       reason:[NSString stringWithFormat:@"Unable to determine class type for property declaration: '%@'", propertyName]
+                                       reason:[NSString stringWithFormat:@"Unable to determine class type for property '%@' of class '%@'",
+                                                                         propertyName, aClass]
                                      userInfo:nil];
 
     if ([[startOfClassName substringToIndex:1] isEqualToString:@"<"])
