@@ -7,16 +7,14 @@
 #import <objc/runtime.h>
 #import "GRReflection.h"
 
-static NSString *const GIReflectorException = @"GIReflectorException";
-
-static Class kProtocolClass;
-static Class kBlockClass;
+static Class GRReflectionTypeProtocol;
+static Class GRReflectionTypeBlock;
 
 @implementation GRReflection
 
 + (void)initialize {
-    kProtocolClass = object_getClass(@protocol(NSObject));
-    kBlockClass = object_getClass(^{});
+    GRReflectionTypeProtocol = object_getClass(@protocol(NSObject));
+    GRReflectionTypeBlock = object_getClass(^{});
 }
 
 + (NSArray *)getAllPropertyNamesOfClass:(Class)aClass {
@@ -32,7 +30,7 @@ static Class kBlockClass;
 + (id)getTypeForProperty:(NSString *)propertyName ofClass:(Class)aClass {
     objc_property_t property = class_getProperty(aClass, [propertyName UTF8String]);
     if (!property)
-        @throw [NSException exceptionWithName:GIReflectorException
+        @throw [NSException exceptionWithName:[NSString stringWithFormat:@"%@Exception", NSStringFromClass([self class])]
                                        reason:[NSString stringWithFormat:@"'%@' does not have a property for '%@'",
                                                                          NSStringFromClass(aClass), propertyName]
                                      userInfo:nil];
@@ -41,18 +39,18 @@ static Class kBlockClass;
 
     NSRange startRange = [attributes rangeOfString:@"T@\""];
     if (startRange.location == NSNotFound)
-        @throw [NSException exceptionWithName:GIReflectorException
-                                       reason:[NSString stringWithFormat:@"Unable to determine class type for property '%@' of class '%@'",
-                                                                         propertyName, aClass]
+        @throw [NSException exceptionWithName:[NSString stringWithFormat:@"%@Exception", NSStringFromClass([self class])]
+                   reason:[NSString stringWithFormat:@"Unable to determine class type for property '%@' of class '%@'",
+                                                     propertyName, aClass]
                                      userInfo:nil];
 
     NSString *startOfClassName = [attributes substringFromIndex:startRange.length];
 
     NSRange endRange = [startOfClassName rangeOfString:@"\""];
     if (endRange.location == NSNotFound)
-        @throw [NSException exceptionWithName:GIReflectorException
-                                       reason:[NSString stringWithFormat:@"Unable to determine class type for property '%@' of class '%@'",
-                                                                         propertyName, aClass]
+        @throw [NSException exceptionWithName:[NSString stringWithFormat:@"%@Exception", NSStringFromClass([self class])]
+                   reason:[NSString stringWithFormat:@"Unable to determine class type for property '%@' of class '%@'",
+                                                     propertyName, aClass]
                                      userInfo:nil];
 
     if ([[startOfClassName substringToIndex:1] isEqualToString:@"<"])
@@ -65,7 +63,7 @@ static Class kBlockClass;
     if (!object)
         return NO;
 
-    return [object_getClass(object) isEqual:kProtocolClass];
+    return [object_getClass(object) isEqual:GRReflectionTypeProtocol];
 }
 
 + (BOOL)isClass:(id)object {
@@ -79,7 +77,7 @@ static Class kBlockClass;
     if (!object)
         return NO;
 
-    return [object_getClass(object) isEqual:kBlockClass];
+    return [object_getClass(object) isEqual:GRReflectionTypeBlock];
 }
 
 + (BOOL)isInstance:(id)object {

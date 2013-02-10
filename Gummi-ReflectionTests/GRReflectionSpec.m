@@ -62,7 +62,7 @@ SPEC_BEGIN(GRReflectionSpec)
             it(@"raises exeption for unknown property names", ^{
                 [[theBlock(^{
                     [GRReflection getTypeForProperty:@"iDoNotExist" ofClass:[Car class]];
-                }) should] raiseWithName:@"GIReflectorException"];
+                }) should] raiseWithName:@"GRReflectionException"];
             });
 
             it(@"returns all property names", ^{
