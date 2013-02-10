@@ -45,7 +45,7 @@ id engineType = [GRReflection getTypeForProperty:@"engine"
 You find the source files you need in Gummi-Reflection/Classes.
 
 ## CocoaPods
-Install [CocoaPods](http://cocoapods.org) and add the Gummi Reflection reference to your Podfile
+Install [CocoaPods] and add the Gummi Reflection reference to your Podfile
 
 ```
 platform :ios, '5.0'
@@ -72,5 +72,6 @@ Open the created Xcode Workspace file.
 * [Gummi Injection] - A lightweight dependency injection framework for Objective-C
 * [Gummi Commander] - Event Command Mapping System for Objective-C
 
+[CocoaPods]: http://cocoapods.org
 [Gummi Injection]: https://github.com/sschmid/Gummi-Injection
 [Gummi Commander]: https://github.com/sschmid/Gummi-Commander

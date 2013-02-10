@@ -12,41 +12,6 @@
 
 SPEC_BEGIN(GRReflectionSpec)
 
-        void (^isClass)(id) = ^(id object) {
-            [[theValue([GRReflection isClass:object]) should] beYes];
-            [[theValue([GRReflection isProtocol:object]) should] beNo];
-            [[theValue([GRReflection isBlock:object]) should] beNo];
-            [[theValue([GRReflection isInstance:object]) should] beNo];
-        };
-
-        void (^isProtocol)(id) = ^(id object) {
-            [[theValue([GRReflection isClass:object]) should] beNo];
-            [[theValue([GRReflection isProtocol:object]) should] beYes];
-            [[theValue([GRReflection isBlock:object]) should] beNo];
-            [[theValue([GRReflection isInstance:object]) should] beNo];
-        };
-
-        void (^isBlock)(id) = ^(id object) {
-            [[theValue([GRReflection isClass:object]) should] beNo];
-            [[theValue([GRReflection isProtocol:object]) should] beNo];
-            [[theValue([GRReflection isBlock:object]) should] beYes];
-            [[theValue([GRReflection isInstance:object]) should] beNo];
-        };
-
-        void (^isInstance)(id) = ^(id object) {
-            [[theValue([GRReflection isClass:object]) should] beNo];
-            [[theValue([GRReflection isProtocol:object]) should] beNo];
-            [[theValue([GRReflection isBlock:object]) should] beNo];
-            [[theValue([GRReflection isInstance:object]) should] beYes];
-        };
-
-        void (^isNothing)(id) = ^(id object) {
-            [[theValue([GRReflection isClass:object]) should] beNo];
-            [[theValue([GRReflection isProtocol:object]) should] beNo];
-            [[theValue([GRReflection isBlock:object]) should] beNo];
-            [[theValue([GRReflection isInstance:object]) should] beNo];
-        };
-
         describe(@"Reflection", ^{
 
             it(@"gets the type of a property class", ^{
@@ -62,7 +27,7 @@ SPEC_BEGIN(GRReflectionSpec)
             it(@"raises exeption for unknown property names", ^{
                 [[theBlock(^{
                     [GRReflection getTypeForProperty:@"iDoNotExist" ofClass:[Car class]];
-                }) should] raiseWithName:@"GIReflectorException"];
+                }) should] raiseWithName:@"GRReflectionException"];
             });
 
             it(@"returns all property names", ^{
@@ -73,19 +38,29 @@ SPEC_BEGIN(GRReflectionSpec)
 
             it(@"is a class", ^{
                 id object = [Car class];
-                isClass(object);
+
+                [[theValue([GRReflection isClass:object]) should] beYes];
+                [[theValue([GRReflection isProtocol:object]) should] beNo];
+                [[theValue([GRReflection isBlock:object]) should] beNo];
+                [[theValue([GRReflection isInstance:object]) should] beNo];
             });
 
             it(@"is a protocol", ^{
                 id object = @protocol(Engine);
-                isProtocol(object);
+
+                [[theValue([GRReflection isClass:object]) should] beNo];
+                [[theValue([GRReflection isProtocol:object]) should] beYes];
+                [[theValue([GRReflection isBlock:object]) should] beNo];
+                [[theValue([GRReflection isInstance:object]) should] beNo];
             });
 
             it(@"is a block", ^{
-                void (^object)() = ^{
-                };
+                void (^object)() = ^{};
 
-                isBlock(object);
+                [[theValue([GRReflection isClass:object]) should] beNo];
+                [[theValue([GRReflection isProtocol:object]) should] beNo];
+                [[theValue([GRReflection isBlock:object]) should] beYes];
+                [[theValue([GRReflection isInstance:object]) should] beNo];
             });
 
             it(@"is a block", ^{
@@ -93,16 +68,28 @@ SPEC_BEGIN(GRReflectionSpec)
                     return [[NSObject alloc] init];
                 };
 
-                isBlock(object);
+                [[theValue([GRReflection isClass:object]) should] beNo];
+                [[theValue([GRReflection isProtocol:object]) should] beNo];
+                [[theValue([GRReflection isBlock:object]) should] beYes];
+                [[theValue([GRReflection isInstance:object]) should] beNo];
             });
 
             it(@"is an instance", ^{
                 id object = [[Car alloc] init];
-                isInstance(object);
+
+                [[theValue([GRReflection isClass:object]) should] beNo];
+                [[theValue([GRReflection isProtocol:object]) should] beNo];
+                [[theValue([GRReflection isBlock:object]) should] beNo];
+                [[theValue([GRReflection isInstance:object]) should] beYes];
             });
 
             it(@"nil is handled correctly", ^{
-                isNothing(nil);
+                id object = nil;
+
+                [[theValue([GRReflection isClass:object]) should] beNo];
+                [[theValue([GRReflection isProtocol:object]) should] beNo];
+                [[theValue([GRReflection isBlock:object]) should] beNo];
+                [[theValue([GRReflection isInstance:object]) should] beNo];
             });
 
         });
