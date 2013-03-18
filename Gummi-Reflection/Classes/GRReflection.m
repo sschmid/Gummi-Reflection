@@ -8,11 +8,13 @@
 #import "GRReflection.h"
 
 static Class GRReflectionTypeProtocol;
+static Class GRReflectionTypeBlock;
 
 @implementation GRReflection
 
 + (void)initialize {
     GRReflectionTypeProtocol = object_getClass(@protocol(NSObject));
+    GRReflectionTypeBlock = NSClassFromString(@"NSBlock");
 }
 
 + (NSArray *)getAllPropertyNamesOfClass:(Class)aClass {
@@ -75,7 +77,7 @@ static Class GRReflectionTypeProtocol;
     if (!object)
         return NO;
 
-    return [object isKindOfClass:NSClassFromString(@"NSBlock")];
+    return [object isKindOfClass:GRReflectionTypeBlock];
 }
 
 + (BOOL)isInstance:(id)object {
