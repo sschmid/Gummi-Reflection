@@ -45,10 +45,10 @@
 
 <div class="highlight"><pre><span class="n">Car</span> <span class="o">*</span><span class="n">car</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Car</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
 
-<span class="kt">BOOL</span> <span class="n">isClass</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isClass:</span><span class="n">car</span><span class="p">];</span>
-<span class="kt">BOOL</span> <span class="n">isProtocol</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isProtocol:</span><span class="n">car</span><span class="p">];</span>
-<span class="kt">BOOL</span> <span class="n">isBlock</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isBlock:</span><span class="n">car</span><span class="p">];</span>
-<span class="kt">BOOL</span> <span class="n">isInstance</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">isInstance:</span><span class="n">car</span><span class="p">];</span>
+<span class="kt">BOOL</span> <span class="n">isClass</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="n">isClass</span><span class="o">:</span><span class="n">car</span><span class="p">];</span>
+<span class="kt">BOOL</span> <span class="n">isProtocol</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="n">isProtocol</span><span class="o">:</span><span class="n">car</span><span class="p">];</span>
+<span class="kt">BOOL</span> <span class="n">isBlock</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="n">isBlock</span><span class="o">:</span><span class="n">car</span><span class="p">];</span>
+<span class="kt">BOOL</span> <span class="n">isInstance</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="n">isInstance</span><span class="o">:</span><span class="n">car</span><span class="p">];</span>
 
 <span class="n">NSLog</span><span class="p">(</span><span class="s">@"isClass = %d"</span><span class="p">,</span> <span class="n">isClass</span><span class="p">);</span>        <span class="c1">// NO</span>
 <span class="n">NSLog</span><span class="p">(</span><span class="s">@"isProtocol = %d"</span><span class="p">,</span> <span class="n">isProtocol</span><span class="p">);</span>  <span class="c1">// NO</span>
@@ -58,18 +58,18 @@
 
 <h4>Get all property names of a class</h4>
 
-<div class="highlight"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">propertyNames</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">getAllPropertyNamesOfClass:</span><span class="p">[</span><span class="n">Car</span> <span class="n">class</span><span class="p">]];</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"propertyNames = %@"</span><span class="p">,</span> <span class="n">propertyNames</span><span class="p">);</span>  <span class="c1">// (@"wheel", @"engine")</span>
+<div class="highlight"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">propertyNames</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="n">getAllPropertyNamesOfClass</span><span class="o">:</span><span class="p">[</span><span class="n">Car</span> <span class="n">class</span><span class="p">]];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"propertyNames = %@"</span><span class="p">,</span> <span class="n">propertyNames</span><span class="p">);</span>  <span class="c1">// [@"wheel", @"engine"]</span>
 </pre></div>
 
 <h4>Get the property type of a class</h4>
 
 <div class="highlight"><pre><span class="c1">// returns class 'Wheel'</span>
-<span class="kt">id</span> <span class="n">wheelType</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">getTypeForProperty:</span><span class="s">@"wheel"</span>
+<span class="kt">id</span> <span class="n">wheelType</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="n">getTypeForProperty</span><span class="o">:</span><span class="s">@"wheel"</span>
                                         <span class="nl">ofClass:</span><span class="p">[</span><span class="n">Car</span> <span class="n">class</span><span class="p">]];</span>
 
 <span class="c1">// returns protocol &lt;Engine&gt;</span>
-<span class="kt">id</span> <span class="n">engineType</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="nl">getTypeForProperty:</span><span class="s">@"engine"</span>
+<span class="kt">id</span> <span class="n">engineType</span> <span class="o">=</span> <span class="p">[</span><span class="n">GRReflection</span> <span class="n">getTypeForProperty</span><span class="o">:</span><span class="s">@"engine"</span>
                                          <span class="nl">ofClass:</span><span class="p">[</span><span class="n">Car</span> <span class="n">class</span><span class="p">]];</span>
 </pre></div>
 
