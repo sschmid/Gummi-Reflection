@@ -26,7 +26,7 @@ NSLog(@"isInstance = %d", isInstance);  // YES
 
 ```objective-c
 NSArray *propertyNames = [GRReflection getAllPropertyNamesOfClass:[Car class]];
-NSLog(@"propertyNames = %@", propertyNames);  // (@"wheel", @"engine")
+NSLog(@"propertyNames = %@", propertyNames);  // [@"wheel", @"engine"]
 ```
 
 #### Get the property type of a class
